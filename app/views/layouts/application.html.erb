@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest = "offline.appcache">
   <head>
     <title>Origamimobile</title>
     <%= csrf_meta_tags %>
@@ -26,17 +26,15 @@
      <div data-role="footer" data-theme="a" data-position="fixed">
         <div data-role="navbar">
             <ul >
-                <li><a href="/acerca" data-transition="slidedown"
-                       class="ui-btn ui-btn-icon-top ui-icon-info"
-                >Nosotros</a></li>
-                <li><a href="/origamis.html"
-                       class="ui-btn ui-btn-icon-top ui-icon-bars"
-                       data-ajax="false"
-                >Origamis</a></li>
-                <li><a href="/origamis.html?favoritos=true"
-                        class="ui-btn ui-btn-icon-top ui-icon-star"
-                       data-ajax="false"
-                >Favoritos</a></li>
+    <ul >
+
+          <li> <%= link_to 'Nosotros', root_path,class: "ui-btn ui-btn-icon-top ui-icon-info #{ @origamis.present? ? '' : 'ui-btn-active'} ", data: {ajax: "false"} %></li>
+
+          <li><%= link_to 'Origamis', origamis_path,  class: "ui-btn ui-btn-icon-top ui-icon-bars  #{ @origamis.present? && params[:favoritos].nil? ? 'ui-btn-active' : ''} " , data: {ajax: "false"} %></li>
+          
+          <li><%= link_to 'Origamis', origamis_path(favoritos: true),  class: "ui-btn ui-btn-icon-top ui-icon-star  #{ params[:favoritos].present? ? 'ui-btn-active' : ''} " , data: {ajax: "false"} %></li>></li>
+
+    </ul>
             </ul>
         </div>
 

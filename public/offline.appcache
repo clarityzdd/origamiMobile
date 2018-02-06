@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v 1485438306
+CACHE:
+/assets/jquery.mobile.self.css?body=1
+/assets/origami.self.css?body=1
+/assets/scaffolds.self.css?body=1
+/assets/application.self.css?body=1
+
+/assets/rails-ujs.self.js?body=1
+/assets/jquery.self.js?body=1
+/assets/jquery_ujs.self.js?body=1
+/assets/jquery.mobile.self.js?body=1
+/assets/action_cable.self.js?body=1
+/assets/cable.self.js?body=1
+/assets/origamis.self.js?body=1
+/assets/application.self.js?body=1
+
+
+NETWORK:
+*
