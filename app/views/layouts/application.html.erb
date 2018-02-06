@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Origamimobile</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    
+    
+    
+ <div data-role="page" data-theme="a">
+     <div data-role="header">
+         <h1><%= yield :titulo %></h1>
+         <%= yield :botones %>
+     </div>
+     <div class="ui-content" role="main">
+     
+<%= yield %>
+
+     </div>
+
+     <div data-role="footer" data-theme="a" data-position="fixed">
+        <div data-role="navbar">
+            <ul >
+                <li><a href="/acerca" data-transition="slidedown"
+                       class="ui-btn ui-btn-icon-top ui-icon-info"
+                >Nosotros</a></li>
+                <li><a href="/origamis.html"
+                       class="ui-btn ui-btn-icon-top ui-icon-bars"
+                       data-ajax="false"
+                >Origamis</a></li>
+                <li><a href="/origamis.html?favoritos=true"
+                        class="ui-btn ui-btn-icon-top ui-icon-star"
+                       data-ajax="false"
+                >Favoritos</a></li>
+            </ul>
+        </div>
+
+     </div>
+ </div>
+
+ <div data-role="page" id="acerca" data-theme="a">
+     <div data-role="header" data-add-back-btn="true">
+         <h1>Origami Mania</h1>
+     </div>
+     <div class="ui-content" role="main">
+         <br>
+         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam architecto aspernatur debitis
+             dolore doloremque ea eius error expedita facere fuga ipsum iusto laboriosam mollitia natus officiis
+             perferendis placeat quaerat quas quasi quia rem sint sit tempora ut vitae, voluptatem!
+         </div>
+
+     </div>
+
+     <div data-role="footer" data-theme="a" data-position="fixed">
+         footer provisional....
+     </div>
+ </div>
+
+    
+    
+  </body>
+</html>

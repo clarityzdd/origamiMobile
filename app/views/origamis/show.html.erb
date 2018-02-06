@@ -1,0 +1,39 @@
+ <%= content_for :botones do %>
+   <%= link_to "atras", origamis_path, {"data-rel"=>"back", class: "ui-btn ui-btn-left ui-corner-all ui-mini ui-btn-icon-left ui-icon-back  ui-btn-inline"}%>
+ <% end %>
+
+<%= content_for :titulo, @origami.nombre %>
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Dificultad:</strong>
+  <%= @origami.dificultad %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @origami.categoria %>
+</p>
+
+<p>
+  <%= image_tag(@origami.imagen, id: "img-origami") if @origami.imagen.present? %>
+</p>
+
+	<div class="ui-grid-b ui-mini " id="showbotones">
+		  <div class= "ui-block-a">
+				<%= link_to "Favorito", @origami_path, {class: "ui-btn ui-icon-plus ui-btn-icon-top ui-btn-b ui-corner-all"} %>
+		  </div>
+
+		  <div class= "ui-block-b">
+				<%= link_to "Editar", edit_origami_path(@origami), {class: "ui-btn ui-icon-info ui-btn-icon-top ui-btn-b ui-corner-all"} %>
+		  </div>
+
+		  <div class= "ui-block-c">
+				<%= link_to "Eliminar", @origami_path, {data: {confirm: "¿estás seguro?"}, method: "delete", class: "ui-btn ui-icon-delete ui-btn-icon-top ui-btn-a ui-corner-all"} %>
+		  </div>
+	</div>
+
+<%= link_to 'Edit', edit_origami_path(@origami) %> |
+<%= link_to 'Back', origamis_path %>

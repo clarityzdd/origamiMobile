@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: clarityzdd
+  api_key: '616174912734148'
+  api_secret: FHuUk1-mRsphaIVh6J_CajxwK8Y
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: clarityzdd
+  api_key: '616174912734148'
+  api_secret: FHuUk1-mRsphaIVh6J_CajxwK8Y
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: clarityzdd
+  api_key: '616174912734148'
+  api_secret: FHuUk1-mRsphaIVh6J_CajxwK8Y
+  enhance_image_tag: true
+  static_image_support: false

@@ -1,0 +1,37 @@
+<%= form_with(model: origami, local: true, html: {multipart: true, "data-ajax" => "false"}) do |form| %>
+  <% if origami.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(origami.errors.count, "error") %> prohibited this origami from being saved:</h2>
+
+      <ul>
+      <% origami.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :origami_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dificultad %>
+    <%= form.text_field :dificultad, id: :origami_dificultad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categoria %>
+    <%= form.text_field :categoria, id: :origami_categoria %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.file_field :imagen, id: :origami_imagen %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

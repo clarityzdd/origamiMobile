@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+ <%= content_for :titulo, "Origamis" %>
+ 
+ <%= content_for :botones do %>
+   <%= link_to "nuevo", new_origami_path, class: "ui-btn ui-btn-right ui-corner-all ui-btn-icon-right ui-icon-plus ui-mini"%>
+ <% end %>
+ 
+          <form class="ui-filterable">
+             <input id="filter-input" data-type="search">
+         </form>
+
+         <ul data-role="listview"
+             data-autodividers="true"
+             data-filter="true"
+             data-input="#filter-input"
+         >
+         
+           <% @origamis.each do |origami| %>
+             <li class="ui-li-has-thumb">
+               <%= link_to origami do %>
+                 <%= image_tag(origami.imagen_url(:thumb)) if origami.imagen.present? %>
+                 <h3><%= origami.nombre %></h3>
+               <% end %>
+             </li>
+           <% end %>
+             
+             
+          </ul>
+   
